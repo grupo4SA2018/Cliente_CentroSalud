@@ -1,0 +1,149 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://ServiciosWeb/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="Doctor" targetNamespace="http://ServiciosWeb/">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://ServiciosWeb/" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://ServiciosWeb/">
+  <xs:element name="consultar_Doctor" type="tns:consultar_Doctor"/>
+  <xs:element name="consultar_DoctorResponse" type="tns:consultar_DoctorResponse"/>
+  <xs:element name="consultar_Doctores" type="tns:consultar_Doctores"/>
+  <xs:element name="consultar_DoctoresResponse" type="tns:consultar_DoctoresResponse"/>
+  <xs:element name="registro_Doctor" type="tns:registro_Doctor"/>
+  <xs:element name="registro_DoctorResponse" type="tns:registro_DoctorResponse"/>
+  <xs:complexType name="registro_Doctor">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="nombre" type="xs:string"/>
+      <xs:element minOccurs="0" name="licenciaMedica" type="xs:string"/>
+      <xs:element minOccurs="0" name="fecha_nac" type="xs:string"/>
+      <xs:element minOccurs="0" name="especialidad" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="registro_DoctorResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="consultar_Doctor">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="idDoctor" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="consultar_DoctorResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="consultar_Doctores">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="consultar_DoctoresResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SQLException" type="tns:SQLException"/>
+  <xs:complexType name="SQLException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="errorCode" type="xs:int"/>
+      <xs:element minOccurs="0" name="sQLState" type="xs:string"/>
+      <xs:element minOccurs="0" name="message" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="consultar_DoctorResponse">
+    <wsdl:part element="tns:consultar_DoctorResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="registro_Doctor">
+    <wsdl:part element="tns:registro_Doctor" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="registro_DoctorResponse">
+    <wsdl:part element="tns:registro_DoctorResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SQLException">
+    <wsdl:part element="tns:SQLException" name="SQLException">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultar_DoctoresResponse">
+    <wsdl:part element="tns:consultar_DoctoresResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultar_Doctor">
+    <wsdl:part element="tns:consultar_Doctor" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultar_Doctores">
+    <wsdl:part element="tns:consultar_Doctores" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="Doctor">
+    <wsdl:operation name="registro_Doctor">
+      <wsdl:input message="tns:registro_Doctor" name="registro_Doctor">
+    </wsdl:input>
+      <wsdl:output message="tns:registro_DoctorResponse" name="registro_DoctorResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:SQLException" name="SQLException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="consultar_Doctor">
+      <wsdl:input message="tns:consultar_Doctor" name="consultar_Doctor">
+    </wsdl:input>
+      <wsdl:output message="tns:consultar_DoctorResponse" name="consultar_DoctorResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:SQLException" name="SQLException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="consultar_Doctores">
+      <wsdl:input message="tns:consultar_Doctores" name="consultar_Doctores">
+    </wsdl:input>
+      <wsdl:output message="tns:consultar_DoctoresResponse" name="consultar_DoctoresResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:SQLException" name="SQLException">
+    </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DoctorSoapBinding" type="tns:Doctor">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="registro_Doctor">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="registro_Doctor">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="registro_DoctorResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SQLException">
+        <soap:fault name="SQLException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="consultar_Doctor">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="consultar_Doctor">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="consultar_DoctorResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SQLException">
+        <soap:fault name="SQLException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="consultar_Doctores">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="consultar_Doctores">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="consultar_DoctoresResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SQLException">
+        <soap:fault name="SQLException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Doctor">
+    <wsdl:port binding="tns:DoctorSoapBinding" name="DoctorPort">
+      <soap:address location="http://localhost:8080/centroSalud/Doctor"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

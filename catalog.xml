@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://localhost:8080/centroSalud/CentroSalud?wsdl" uri="xml-resources/web-service-references/CentroSalud/wsdl/localhost_8080/centroSalud/CentroSalud.wsdl"/>
+    <system systemId="http://localhost:8080/centroSalud/Medicamento?wsdl" uri="xml-resources/web-service-references/Medicamento/wsdl/localhost_8080/centroSalud/Medicamento.wsdl"/>
+    <system systemId="http://localhost:8080/centroSalud/Enfermedad?wsdl" uri="xml-resources/web-service-references/Enfermedad/wsdl/localhost_8080/centroSalud/Enfermedad.wsdl"/>
+    <system systemId="http://localhost:8080/centroSalud/Paciente?wsdl" uri="xml-resources/web-service-references/Paciente/wsdl/localhost_8080/centroSalud/Paciente.wsdl"/>
+    <system systemId="http://localhost:8080/centroSalud/Doctor?wsdl" uri="xml-resources/web-service-references/Doctor/wsdl/localhost_8080/centroSalud/Doctor.wsdl"/>
+    <system systemId="http://localhost:8080/centroSalud/Cita?wsdl" uri="xml-resources/web-service-references/Cita/wsdl/localhost_8080/centroSalud/Cita.wsdl"/>
+    <system systemId="http://localhost:8080/centroSalud/Diagnostico?wsdl" uri="xml-resources/web-service-references/Diagnostico/wsdl/localhost_8080/centroSalud/Diagnostico.wsdl"/>
+    <system systemId="http://localhost:8080/centroSalud/Receta?wsdl" uri="xml-resources/web-service-references/Receta/wsdl/localhost_8080/centroSalud/Receta.wsdl"/>
+</catalog>

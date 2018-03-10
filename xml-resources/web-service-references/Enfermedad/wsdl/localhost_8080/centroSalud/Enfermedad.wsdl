@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://ServiciosWeb/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="Enfermedad" targetNamespace="http://ServiciosWeb/">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://ServiciosWeb/" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://ServiciosWeb/">
+  <xs:element name="consultar_Enfermedades" type="tns:consultar_Enfermedades"/>
+  <xs:element name="consultar_EnfermedadesResponse" type="tns:consultar_EnfermedadesResponse"/>
+  <xs:element name="registro_Enfermedad" type="tns:registro_Enfermedad"/>
+  <xs:element name="registro_EnfermedadResponse" type="tns:registro_EnfermedadResponse"/>
+  <xs:complexType name="consultar_Enfermedades">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="consultar_EnfermedadesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="registro_Enfermedad">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="nombre" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="registro_EnfermedadResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SQLException" type="tns:SQLException"/>
+  <xs:complexType name="SQLException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="errorCode" type="xs:int"/>
+      <xs:element minOccurs="0" name="sQLState" type="xs:string"/>
+      <xs:element minOccurs="0" name="message" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="consultar_Enfermedades">
+    <wsdl:part element="tns:consultar_Enfermedades" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="registro_EnfermedadResponse">
+    <wsdl:part element="tns:registro_EnfermedadResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SQLException">
+    <wsdl:part element="tns:SQLException" name="SQLException">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultar_EnfermedadesResponse">
+    <wsdl:part element="tns:consultar_EnfermedadesResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="registro_Enfermedad">
+    <wsdl:part element="tns:registro_Enfermedad" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="Enfermedad">
+    <wsdl:operation name="consultar_Enfermedades">
+      <wsdl:input message="tns:consultar_Enfermedades" name="consultar_Enfermedades">
+    </wsdl:input>
+      <wsdl:output message="tns:consultar_EnfermedadesResponse" name="consultar_EnfermedadesResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:SQLException" name="SQLException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="registro_Enfermedad">
+      <wsdl:input message="tns:registro_Enfermedad" name="registro_Enfermedad">
+    </wsdl:input>
+      <wsdl:output message="tns:registro_EnfermedadResponse" name="registro_EnfermedadResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:SQLException" name="SQLException">
+    </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="EnfermedadSoapBinding" type="tns:Enfermedad">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="consultar_Enfermedades">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="consultar_Enfermedades">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="consultar_EnfermedadesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SQLException">
+        <soap:fault name="SQLException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="registro_Enfermedad">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="registro_Enfermedad">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="registro_EnfermedadResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SQLException">
+        <soap:fault name="SQLException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Enfermedad">
+    <wsdl:port binding="tns:EnfermedadSoapBinding" name="EnfermedadPort">
+      <soap:address location="http://localhost:8080/centroSalud/Enfermedad"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

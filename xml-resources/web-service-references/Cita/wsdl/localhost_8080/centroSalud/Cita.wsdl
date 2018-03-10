@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://ServiciosWeb/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="Cita" targetNamespace="http://ServiciosWeb/">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://ServiciosWeb/" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://ServiciosWeb/">
+  <xs:element name="registro_Cita" type="tns:registro_Cita"/>
+  <xs:element name="registro_CitaResponse" type="tns:registro_CitaResponse"/>
+  <xs:complexType name="registro_Cita">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fecha" type="xs:string"/>
+      <xs:element name="realizada" type="xs:int"/>
+      <xs:element name="idPaciente" type="xs:int"/>
+      <xs:element name="idDoctor" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="registro_CitaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SQLException" type="tns:SQLException"/>
+  <xs:complexType name="SQLException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="errorCode" type="xs:int"/>
+      <xs:element minOccurs="0" name="sQLState" type="xs:string"/>
+      <xs:element minOccurs="0" name="message" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="registro_Cita">
+    <wsdl:part element="tns:registro_Cita" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SQLException">
+    <wsdl:part element="tns:SQLException" name="SQLException">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="registro_CitaResponse">
+    <wsdl:part element="tns:registro_CitaResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="Cita">
+    <wsdl:operation name="registro_Cita">
+      <wsdl:input message="tns:registro_Cita" name="registro_Cita">
+    </wsdl:input>
+      <wsdl:output message="tns:registro_CitaResponse" name="registro_CitaResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:SQLException" name="SQLException">
+    </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CitaSoapBinding" type="tns:Cita">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="registro_Cita">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="registro_Cita">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="registro_CitaResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SQLException">
+        <soap:fault name="SQLException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Cita">
+    <wsdl:port binding="tns:CitaSoapBinding" name="CitaPort">
+      <soap:address location="http://localhost:8080/centroSalud/Cita"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

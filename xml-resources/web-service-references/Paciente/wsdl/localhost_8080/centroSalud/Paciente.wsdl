@@ -1,0 +1,195 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://ServiciosWeb/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="Paciente" targetNamespace="http://ServiciosWeb/">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://ServiciosWeb/" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://ServiciosWeb/">
+  <xs:element name="consultar_Paciente" type="tns:consultar_Paciente"/>
+  <xs:element name="consultar_PacienteResponse" type="tns:consultar_PacienteResponse"/>
+  <xs:element name="historial_Paciente" type="tns:historial_Paciente"/>
+  <xs:element name="historial_PacienteResponse" type="tns:historial_PacienteResponse"/>
+  <xs:element name="obtenerIdPaciente" type="tns:obtenerIdPaciente"/>
+  <xs:element name="obtenerIdPacienteResponse" type="tns:obtenerIdPacienteResponse"/>
+  <xs:element name="registro_Paciente" type="tns:registro_Paciente"/>
+  <xs:element name="registro_PacienteResponse" type="tns:registro_PacienteResponse"/>
+  <xs:complexType name="historial_Paciente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dpi" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="historial_PacienteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="consultar_Paciente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dpi" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="consultar_PacienteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="registro_Paciente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dpi" type="xs:string"/>
+      <xs:element minOccurs="0" name="nombrePaciente" type="xs:string"/>
+      <xs:element minOccurs="0" name="fecha_nac" type="xs:string"/>
+      <xs:element name="genero" type="xs:int"/>
+      <xs:element minOccurs="0" name="direccion" type="xs:string"/>
+      <xs:element minOccurs="0" name="telefono" type="xs:string"/>
+      <xs:element name="estado" type="xs:int"/>
+      <xs:element minOccurs="0" name="correo" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="registro_PacienteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtenerIdPaciente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dpi" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtenerIdPacienteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SQLException" type="tns:SQLException"/>
+  <xs:complexType name="SQLException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="errorCode" type="xs:int"/>
+      <xs:element minOccurs="0" name="sQLState" type="xs:string"/>
+      <xs:element minOccurs="0" name="message" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="consultar_PacienteResponse">
+    <wsdl:part element="tns:consultar_PacienteResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="registro_PacienteResponse">
+    <wsdl:part element="tns:registro_PacienteResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="historial_Paciente">
+    <wsdl:part element="tns:historial_Paciente" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="registro_Paciente">
+    <wsdl:part element="tns:registro_Paciente" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="obtenerIdPacienteResponse">
+    <wsdl:part element="tns:obtenerIdPacienteResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SQLException">
+    <wsdl:part element="tns:SQLException" name="SQLException">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultar_Paciente">
+    <wsdl:part element="tns:consultar_Paciente" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="historial_PacienteResponse">
+    <wsdl:part element="tns:historial_PacienteResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="obtenerIdPaciente">
+    <wsdl:part element="tns:obtenerIdPaciente" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="Paciente">
+    <wsdl:operation name="historial_Paciente">
+      <wsdl:input message="tns:historial_Paciente" name="historial_Paciente">
+    </wsdl:input>
+      <wsdl:output message="tns:historial_PacienteResponse" name="historial_PacienteResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:SQLException" name="SQLException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="consultar_Paciente">
+      <wsdl:input message="tns:consultar_Paciente" name="consultar_Paciente">
+    </wsdl:input>
+      <wsdl:output message="tns:consultar_PacienteResponse" name="consultar_PacienteResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:SQLException" name="SQLException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="registro_Paciente">
+      <wsdl:input message="tns:registro_Paciente" name="registro_Paciente">
+    </wsdl:input>
+      <wsdl:output message="tns:registro_PacienteResponse" name="registro_PacienteResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:SQLException" name="SQLException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerIdPaciente">
+      <wsdl:input message="tns:obtenerIdPaciente" name="obtenerIdPaciente">
+    </wsdl:input>
+      <wsdl:output message="tns:obtenerIdPacienteResponse" name="obtenerIdPacienteResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:SQLException" name="SQLException">
+    </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PacienteSoapBinding" type="tns:Paciente">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="historial_Paciente">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="historial_Paciente">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="historial_PacienteResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SQLException">
+        <soap:fault name="SQLException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="consultar_Paciente">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="consultar_Paciente">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="consultar_PacienteResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SQLException">
+        <soap:fault name="SQLException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="registro_Paciente">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="registro_Paciente">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="registro_PacienteResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SQLException">
+        <soap:fault name="SQLException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerIdPaciente">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="obtenerIdPaciente">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="obtenerIdPacienteResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SQLException">
+        <soap:fault name="SQLException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Paciente">
+    <wsdl:port binding="tns:PacienteSoapBinding" name="PacientePort">
+      <soap:address location="http://localhost:8080/centroSalud/Paciente"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

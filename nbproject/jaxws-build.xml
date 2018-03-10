@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+        *** GENERATED FROM jax-ws.xml - DO NOT EDIT !                             ***
+        *** TO MODIFY wsimport options USE Web Service node -> Edit WS Attributes ***
+        *** TO CHANGE TARGETS GENERATED TO jaxws-build.xml COPY THOSE             ***
+        *** TARGETS TO ../build.xml AND MODIFY THAT FILE INSTEAD                  ***
+
+        --><project xmlns:xalan="http://xml.apache.org/xslt" xmlns:j2seproject3="http://www.netbeans.org/ns/j2se-project/3" xmlns:jaxws="http://www.netbeans.org/ns/jax-ws/1">
+    <!--
+                ===================
+                JAX-WS WSIMPORT SECTION
+                ===================
+            -->
+    <target name="wsimport-init" depends="init">
+        <mkdir dir="${build.generated.sources.dir}/jax-ws"/>
+        <taskdef name="wsimport" classname="com.sun.tools.ws.ant.WsImport">
+            <classpath path="${libs.jaxws21.classpath}"/>
+        </taskdef>
+    </target>
+    <target name="wsimport-client-Enfermedad" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/Enfermedad"/>
+        <property name="wsdl-Enfermedad" location="xml-resources/web-service-references/Enfermedad/wsdl/localhost_8080/centroSalud/Enfermedad.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/Enfermedad" destdir="${build.generated.dir}/jax-wsCache/Enfermedad" wsdl="${wsdl-Enfermedad}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/centroSalud/Enfermedad?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${wsdl-Enfermedad}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/Enfermedad"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/Enfermedad">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-Enfermedad" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/Enfermedad"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/serviciosweb"/>
+    </target>
+    <target name="wsimport-client-Medicamento" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/Medicamento"/>
+        <property name="wsdl-Medicamento" location="xml-resources/web-service-references/Medicamento/wsdl/localhost_8080/centroSalud/Medicamento.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/Medicamento" destdir="${build.generated.dir}/jax-wsCache/Medicamento" wsdl="${wsdl-Medicamento}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/centroSalud/Medicamento?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${wsdl-Medicamento}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/Medicamento"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/Medicamento">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-Medicamento" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/Medicamento"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/serviciosweb"/>
+    </target>
+    <target name="wsimport-client-Paciente" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/Paciente"/>
+        <property name="wsdl-Paciente" location="xml-resources/web-service-references/Paciente/wsdl/localhost_8080/centroSalud/Paciente.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/Paciente" destdir="${build.generated.dir}/jax-wsCache/Paciente" wsdl="${wsdl-Paciente}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/centroSalud/Paciente?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${wsdl-Paciente}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/Paciente"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/Paciente">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-Paciente" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/Paciente"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/serviciosweb"/>
+    </target>
+    <target name="wsimport-client-Doctor" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/Doctor"/>
+        <property name="wsdl-Doctor" location="xml-resources/web-service-references/Doctor/wsdl/localhost_8080/centroSalud/Doctor.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/Doctor" destdir="${build.generated.dir}/jax-wsCache/Doctor" wsdl="${wsdl-Doctor}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/centroSalud/Doctor?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${wsdl-Doctor}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/Doctor"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/Doctor">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-Doctor" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/Doctor"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/serviciosweb"/>
+    </target>
+    <target name="wsimport-client-CentroSalud" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/CentroSalud"/>
+        <property name="wsdl-CentroSalud" location="xml-resources/web-service-references/CentroSalud/wsdl/localhost_8080/centroSalud/CentroSalud.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/CentroSalud" destdir="${build.generated.dir}/jax-wsCache/CentroSalud" wsdl="${wsdl-CentroSalud}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/centroSalud/CentroSalud?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${wsdl-CentroSalud}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/CentroSalud"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/CentroSalud">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-CentroSalud" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/CentroSalud"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/serviciosweb"/>
+    </target>
+    <target name="wsimport-client-Cita" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/Cita"/>
+        <property name="wsdl-Cita" location="xml-resources/web-service-references/Cita/wsdl/localhost_8080/centroSalud/Cita.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/Cita" destdir="${build.generated.dir}/jax-wsCache/Cita" wsdl="${wsdl-Cita}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/centroSalud/Cita?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${wsdl-Cita}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/Cita"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/Cita">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-Cita" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/Cita"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/serviciosweb"/>
+    </target>
+    <target name="wsimport-client-Diagnostico" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/Diagnostico"/>
+        <property name="wsdl-Diagnostico" location="xml-resources/web-service-references/Diagnostico/wsdl/localhost_8080/centroSalud/Diagnostico.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/Diagnostico" destdir="${build.generated.dir}/jax-wsCache/Diagnostico" wsdl="${wsdl-Diagnostico}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/centroSalud/Diagnostico?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${wsdl-Diagnostico}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/Diagnostico"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/Diagnostico">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-Diagnostico" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/Diagnostico"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/serviciosweb"/>
+    </target>
+    <target name="wsimport-client-Receta" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/Receta"/>
+        <property name="wsdl-Receta" location="xml-resources/web-service-references/Receta/wsdl/localhost_8080/centroSalud/Receta.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/Receta" destdir="${build.generated.dir}/jax-wsCache/Receta" wsdl="${wsdl-Receta}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/centroSalud/Receta?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${wsdl-Receta}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/Receta"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/Receta">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-Receta" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/Receta"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/serviciosweb"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-Enfermedad, wsimport-client-Medicamento, wsimport-client-Paciente, wsimport-client-Doctor, wsimport-client-CentroSalud, wsimport-client-Cita, wsimport-client-Diagnostico, wsimport-client-Receta"/>
+</project>
